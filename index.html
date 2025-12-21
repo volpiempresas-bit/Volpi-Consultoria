@@ -5,6 +5,34 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Volpi Consultoria | Consórcios Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              gold: {
+                400: '#D4AF37',
+                500: '#C5A028',
+                600: '#B08D20',
+              },
+              graphite: {
+                800: '#1E293B', 
+                900: '#0F172A',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Montserrat', 'sans-serif'], 
+            },
+            boxShadow: {
+              'sharp': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              'glow': '0 0 15px rgba(212, 175, 55, 0.15)',
+            }
+          },
+        },
+      }
+    </script>
   <script type="importmap">
 {
   "imports": {
@@ -19,7 +47,7 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-  <body>
+  <body class="bg-slate-50 text-slate-700 antialiased selection:bg-gold-400 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
