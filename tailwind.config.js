@@ -8,9 +8,9 @@ export default {
     extend: {
       colors: {
         gold: {
-          400: '#D4AF37',
-          500: '#C5A028',
-          600: '#B08D20',
+          400: '#B91C1C',
+          500: '#991B1B',
+          600: '#7F1D1D',
         },
         graphite: {
           800: '#2C3E50',

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Building2, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
+import { TrendingUp, Building2, Calendar, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const OffPlanSimulator: React.FC = () => {
   const [showDetails, setShowDetails] = useState(false);

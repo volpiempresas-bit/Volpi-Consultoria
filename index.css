@@ -4,20 +4,35 @@
 html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #1a0303;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f8fafc; 
+  background: #1a0303; 
 }
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e1; 
-  border-radius: 5px;
-  border: 2px solid #f8fafc;
+  background: #D4AF37; 
+  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8; 
+  background: #AA882E; 
+}
+
+/* Adicionando animações suaves */
+.animate-in {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation-name: fadeIn;
 }

@@ -1,61 +1,96 @@
 import React from 'react';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Award, ArrowRight } from 'lucide-react';
 import { Button } from './Button';
-import { WHATSAPP_NUMBER } from '../types';
 
-export const Hero: React.FC = () => {
-  const handleContactClick = () => {
-    window.open(`https://wa.me/${WHATSAPP_NUMBER}`, '_blank');
-  };
+interface HeroProps {
+  onOpenSpecialistForm: () => void;
+}
 
+export const Hero: React.FC<HeroProps> = ({ onOpenSpecialistForm }) => {
   return (
-    <section className="relative min-h-screen flex items-center bg-graphite-900 overflow-hidden pt-20 pb-12">
-      {/* Background Image with Heavier Overlay */}
+    <section className="relative min-h-[85vh] flex items-center bg-bordeaux-950 overflow-hidden pt-24 pb-16">
+      {/* Background Decor */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" 
-          alt="Modern Architecture" 
-          className="w-full h-full object-cover opacity-40"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-graphite-900/90 via-graphite-900/95 to-graphite-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-tr from-bordeaux-950 via-bordeaux-900/10 to-bordeaux-950"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gold-500/5 blur-[120px] pointer-events-none"></div>
       </div>
 
       <div className="relative z-10 w-full max-w-7xl mx-auto px-6">
-        <div className="max-w-3xl animate-in fade-in slide-in-from-bottom-6 duration-1000">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 bg-white/5 border border-white/10 rounded-full backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
-            <span className="text-gold-400 text-xs font-bold tracking-widest uppercase font-sans">Especialista em Consórcios Premium</span>
-          </div>
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif font-extrabold text-white leading-[1.1] mb-8 tracking-tight">
-            Seu patrimônio construído <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 to-white">com inteligência.</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-slate-300 mb-10 font-medium leading-relaxed max-w-2xl">
-            Consultoria estratégica para aquisição de imóveis e veículos. Fuja dos juros bancários e utilize o consórcio como ferramenta de alavancagem.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button 
-              onClick={handleContactClick}
-              className="group py-5 px-10 text-lg font-bold shadow-2xl shadow-gold-400/10"
-            >
-              Falar com Especialista
-              <ArrowRight size={22} className="ml-3 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          {/* Left Column: Value Proposition */}
+          <div className="lg:col-span-7 space-y-6 animate-in fade-in slide-in-from-left-8 duration-1000 delay-300">
             
-            <div className="flex flex-col gap-3 justify-center text-slate-400 text-sm font-bold uppercase tracking-widest pl-2">
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-gold-400" size={18} />
-                <span>Zero Juros Bancários</span>
+            <div className="space-y-5">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-gold-500/10 border border-gold-500/20 rounded-full">
+                <ShieldCheck size={14} className="text-gold-500" />
+                <span className="text-gold-400 text-[10px] font-black tracking-widest uppercase">Consultoria Estratégica</span>
               </div>
-              <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-gold-400" size={18} />
-                <span>Poder de Compra à Vista</span>
+              
+              <h1 className="text-2xl md:text-4xl lg:text-5xl font-serif font-black text-white leading-tight uppercase tracking-tight max-w-3xl">
+                Compre seu bem de forma <br/>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold-400 via-gold-500 to-white">barata e sem burocracia.</span>
+              </h1>
+              
+              <p className="text-sm md:text-base lg:text-lg text-white/60 font-medium leading-relaxed max-w-2xl">
+                Ajudo pessoas na aquisição de imóveis, carros e algum bem no geral de forma rápida e segura, adequando as suas necessidades, orientando no curto a longo prazo gerando economia.
+              </p>
+
+              <div className="flex items-center gap-6 pt-2">
+                <div className="flex items-center gap-2 text-white/40 text-[10px] font-black uppercase tracking-widest">
+                  <ShieldCheck size={16} className="text-gold-500" />
+                  <span>site protegido</span>
+                </div>
+                <div className="w-px h-4 bg-white/10"></div>
+                <div className="flex items-center gap-2 text-white/40 text-[10px] font-black uppercase tracking-widest">
+                  <Award size={16} className="text-gold-500" />
+                  <span>profissional autorizado</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-4">
+              <Button 
+                onClick={onOpenSpecialistForm}
+                className="group py-4 px-9 text-sm md:text-base shadow-glow border-2 border-gold-500/40"
+              >
+                quero mais informações
+                <ArrowRight size={20} className="ml-3 group-hover:translate-x-1 transition-transform" />
+              </Button>
+              <p className="mt-4 text-[10px] text-white/30 uppercase font-black tracking-widest">
+                Atendimento personalizado via WhatsApp
+              </p>
+            </div>
+
+          </div>
+
+          {/* Right Column: Larger Image with Luxury Lifestyle */}
+          <div className="lg:col-span-5 animate-in fade-in slide-in-from-right-8 duration-1000 flex justify-center lg:justify-end">
+            <div className="relative group max-w-[450px] w-full">
+              {/* Subtle Decorative Frame */}
+              <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-gold-500/30"></div>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-gold-500/30"></div>
+              
+              <div className="relative overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-bordeaux-900 aspect-video lg:aspect-[4/3]">
+                <img 
+                  src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80" 
+                  alt="Patrimônio de Luxo - Ferrari e Mansão" 
+                  className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                />
+                
+                {/* Branding Overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-bordeaux-950 via-bordeaux-950/70 to-transparent">
+                  <h2 className="text-lg md:text-xl font-serif font-black text-white uppercase tracking-tight">
+                    Seu Próximo Patrimônio
+                  </h2>
+                  <p className="text-gold-500 text-[9px] font-black uppercase tracking-[0.2em] mt-1">
+                    Consultoria Volpi • Estratégia de Aquisição
+                  </p>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
