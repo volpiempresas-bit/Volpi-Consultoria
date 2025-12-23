@@ -9,7 +9,6 @@ import { PropertyFormModal } from './components/PropertyFormModal';
 import { VehicleFormModal } from './components/VehicleFormModal';
 import { ServiceFormModal } from './components/ServiceFormModal';
 import { OtherFormModal } from './components/OtherFormModal';
-import { AIChatModal } from './components/AIChatModal';
 import { OpportunitiesModal } from './components/OpportunitiesModal';
 import { AulasModal } from './components/AulasModal';
 import { SpecialistFormModal } from './components/SpecialistFormModal';
@@ -19,7 +18,6 @@ function App() {
   const [isVehicleModalOpen, setIsVehicleModalOpen] = useState(false);
   const [isServiceModalOpen, setIsServiceModalOpen] = useState(false);
   const [isOtherModalOpen, setIsOtherModalOpen] = useState(false);
-  const [isAIModalOpen, setIsAIModalOpen] = useState(false);
   const [isOpportunitiesOpen, setIsOpportunitiesOpen] = useState(false);
   const [isAulasOpen, setIsAulasOpen] = useState(false);
   const [isSpecialistFormOpen, setIsSpecialistFormOpen] = useState(false);
@@ -27,7 +25,6 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col font-sans">
       <Header 
-        onOpenAI={() => setIsAIModalOpen(true)} 
         onOpenOpportunities={() => setIsOpportunitiesOpen(true)}
         onOpenAulas={() => setIsAulasOpen(true)}
       />
@@ -67,10 +64,6 @@ function App() {
       />
       
       {/* Modais de Conteúdo e Engajamento */}
-      <AIChatModal 
-        isOpen={isAIModalOpen} 
-        onClose={() => setIsAIModalOpen(false)} 
-      />
       <OpportunitiesModal 
         isOpen={isOpportunitiesOpen} 
         onClose={() => setIsOpportunitiesOpen(false)} 

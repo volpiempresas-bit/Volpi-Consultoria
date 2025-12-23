@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, Menu, X, ArrowUpRight, Sparkles, MessageCircle } from 'lucide-react';
+import { Instagram, Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from '../types';
 
 interface HeaderProps {
-  onOpenAI: () => void;
   onOpenOpportunities: () => void;
   onOpenAulas: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenOpportunities, onOpenAulas }) => {
+export const Header: React.FC<HeaderProps> = ({ onOpenOpportunities, onOpenAulas }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -67,7 +66,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenOpportunities, o
             onClick={onOpenOpportunities}
             className="flex items-center gap-2 text-[10px] font-black transition-colors hover:text-gold-500 text-white/70 uppercase tracking-widest"
           >
-            Oportunidades
+            Grupos no Whatsapp
             <MessageCircle size={14} className="text-green-500" />
           </button>
 
@@ -79,14 +78,6 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenOpportunities, o
           </button>
           
           <div className="w-px h-5 bg-white/10 mx-1"></div>
-
-          <button
-            onClick={onOpenAI}
-            className="flex items-center gap-2 px-4 py-2 text-[10px] font-black uppercase tracking-widest transition-all rounded-sm border border-white/20 text-white hover:border-gold-500 hover:text-gold-500"
-          >
-            <Sparkles size={14} className="text-gold-500" />
-            Fale com a IA
-          </button>
 
           <button
              onClick={() => scrollToSection('contato')}
@@ -110,13 +101,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenAI, onOpenOpportunities, o
             </button>
           ))}
           <button onClick={onOpenOpportunities} className="flex items-center gap-3 text-white font-black text-xl uppercase tracking-widest border-b border-white/5 pb-4 text-left">
-             Oportunidades <MessageCircle size={20} className="text-green-500" />
+             Grupos no Whatsapp <MessageCircle size={20} className="text-green-500" />
           </button>
           <button onClick={onOpenAulas} className="text-left text-white font-black text-xl uppercase tracking-widest border-b border-white/5 pb-4">
               Aulas
-          </button>
-          <button onClick={onOpenAI} className="flex items-center gap-3 text-gold-500 font-black text-xl uppercase tracking-widest border-b border-white/5 pb-4">
-             <Sparkles size={24} /> Fale com a IA
           </button>
         </div>
       )}
