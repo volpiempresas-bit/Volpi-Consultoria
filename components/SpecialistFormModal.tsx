@@ -9,7 +9,7 @@ interface SpecialistFormModalProps {
 }
 
 export const SpecialistFormModal: React.FC<SpecialistFormModalProps> = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState(1);
+  const [, setStep] = useState(1);
   const [formData, setFormData] = useState({
     status: 'Estou decidindo',
     objective: 'Imóvel',

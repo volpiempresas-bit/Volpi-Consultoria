@@ -1,5 +1,5 @@
 import React from 'react';
-import { Users, Home, CarFront, Bike, PlusCircle } from 'lucide-react';
+import { Home, CarFront, Bike, PlusCircle } from 'lucide-react';
 
 interface FeaturesProps {
   onOpenPropertyForm: () => void;
@@ -65,7 +65,9 @@ export const Features: React.FC<FeaturesProps> = ({
             <div 
               key={index} 
               onClick={() => feature.handler && feature.handler()}
-              className={`group rounded-sm transition-all duration-300 bg-white/5 border border-white/5 hover:border-gold-500/30 hover:bg-white/10 flex flex-col h-full overflow-hidden ${feature.handler ? 'cursor-pointer' : ''}`}
+              className={`group rounded-sm transition-all duration-300 bg-white/5 border border-white/5 hover:border-gold-500/30 hover:bg-white/10 flex flex-col h-full overflow-hidden $handler?: () => void;
+
+ : ''}`}
             >
               {feature.image && (
                 <div className="w-full h-48 overflow-hidden relative">
@@ -75,11 +77,15 @@ export const Features: React.FC<FeaturesProps> = ({
                     className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bordeaux-900 via-transparent to-transparent"></div>
-                  {feature.handler && (
+                  feature.handler && (
+  <button>...</button>
+)
+(
                     <div className="absolute top-4 right-4 bg-gold-500 text-bordeaux-950 text-[10px] font-black px-2 py-1 rounded-sm opacity-0 group-hover:opacity-100 transition-opacity">
                       CLIQUE PARA SIMULAR
                     </div>
-                  )}
+                  ) : ''
+
                 </div>
               )}
               

@@ -66,15 +66,15 @@ export const Hero: React.FC<HeroProps> = ({ onOpenSpecialistForm }) => {
 
           {/* Right Column: Larger Image with Luxury Lifestyle */}
           <div className="lg:col-span-5 animate-in fade-in slide-in-from-right-8 duration-1000 flex justify-center lg:justify-end">
-            <div className="relative group max-w-[450px] w-full">
+            <div className="relative group max-w-[500px] w-full">
               {/* Subtle Decorative Frame */}
-              <div className="absolute -top-4 -left-4 w-16 h-16 border-t-2 border-l-2 border-gold-500/30"></div>
-              <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-2 border-r-2 border-gold-500/30"></div>
+              <div className="absolute -top-15 -left-4 w-16 h-16 border-t-2 border-l-2 border-gold-500/30"></div>
+              <div className="absolute -bottom-4 -right-4 w-16 h-16 border-b-0 border-r-0 border-gold-500/30"></div>
               
               <div className="relative overflow-hidden rounded-sm border border-white/10 shadow-2xl bg-bordeaux-900 aspect-video lg:aspect-[4/3]">
                 <img 
-                  src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?auto=format&fit=crop&q=80" 
-                  alt="Patrimônio de Luxo - Ferrari e Mansão" 
+                  src="/volpi-perfil-2.png" 
+                  alt="Volpi Luxury" 
                   className="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                 />
                 

@@ -50,7 +50,7 @@ export const AboutMe: React.FC = () => {
              <div className="relative w-full max-w-md aspect-[3/4] rounded-sm overflow-hidden group border-2 border-gold-500/20">
                <img 
                  src="/volpi-perfil.png" 
-                 alt="Felipe Volpi" 
+                 alt="Volpi Consultor" 
                  className="w-full h-full object-cover grayscale brightness-90 hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
                />
                

@@ -1,6 +1,6 @@
 import React from 'react';
-import { MapPin, Phone, Instagram, Mail } from 'lucide-react';
-import { ADDRESS, INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER } from '../types';
+import { MapPin, Phone, Instagram, } from 'lucide-react';
+import { INSTAGRAM_HANDLE, INSTAGRAM_URL, WHATSAPP_NUMBER } from '../types';
 import { Button } from './Button';
 
 export const Footer: React.FC = () => {

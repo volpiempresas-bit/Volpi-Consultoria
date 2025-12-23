@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Instagram, Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
-import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from '../types';
+import { Menu, X, ArrowUpRight, MessageCircle } from 'lucide-react';
+
 
 interface HeaderProps {
   onOpenOpportunities: () => void;
